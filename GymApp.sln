@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymApp", "GymApp.csproj", "{AAD9D2A8-D062-4C2A-870A-61553074FBF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCode", "..\TestCode\TestCode.csproj", "{108FC42F-523D-457B-B905-ACC7F9FD2727}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAD9D2A8-D062-4C2A-870A-61553074FBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD9D2A8-D062-4C2A-870A-61553074FBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD9D2A8-D062-4C2A-870A-61553074FBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD9D2A8-D062-4C2A-870A-61553074FBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108FC42F-523D-457B-B905-ACC7F9FD2727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108FC42F-523D-457B-B905-ACC7F9FD2727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108FC42F-523D-457B-B905-ACC7F9FD2727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108FC42F-523D-457B-B905-ACC7F9FD2727}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AADAC07-CB92-4942-AD30-69C290F08A45}
+	EndGlobalSection
+EndGlobal
