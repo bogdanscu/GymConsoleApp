@@ -32,7 +32,7 @@ namespace GymApp
 
                 if (!Int32.TryParse(Console.ReadLine(), out choice))
                 {
-                    Console.WriteLine("Invalit input! Press any key to continue..");
+                    Console.WriteLine("Invalit input! Please choose an option from the menu below");
                     continue;
                 }
 
@@ -53,11 +53,14 @@ namespace GymApp
                     case 5:
                         Console.WriteLine("Goodbye!");
                         break;
+                    default:
+                        Console.WriteLine(choice + " is not a valid choice. Please choose an option between 1 and 5!");
+                        break;
                 }
-                if (choice != 5)
-                {
-                    Console.WriteLine("Invalid choice!");
-                }
+                //if (choice != 5)
+                //{
+                //    Console.WriteLine("Invalid choice!");
+                //}
 
             }
             while (choice != 5);
