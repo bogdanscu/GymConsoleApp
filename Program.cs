@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
 
 namespace GymApp
 {
@@ -54,14 +55,9 @@ namespace GymApp
                         Console.WriteLine("Goodbye!");
                         break;
                     default:
-                        Console.WriteLine(choice + " is not a valid choice. Please choose an option between 1 and 5!");
+                        Console.WriteLine($"{choice} is not a valid choice. Please choose an option between 1 and 5!");
                         break;
                 }
-                //if (choice != 5)
-                //{
-                //    Console.WriteLine("Invalid choice!");
-                //}
-
             }
             while (choice != 5);
             
@@ -69,21 +65,68 @@ namespace GymApp
         }
         static void AddMember()
         {
-            Console.WriteLine("===Add New Member===");
+            Console.Clear();
+            Console.WriteLine("===Add New Member===\n");
+
+            Console.Write("Enter member id: ");
+            int memberID;
+            while (!Int32.TryParse(Console.ReadLine(), out memberID))
+            {
+                Console.WriteLine("Invalit input. Please enter a number!");
+            }
+
+            bool idExists = members.Exists(m => m.ID == memberID);
+            if (idExists)
+            {
+                Console.WriteLine("A member with this ID already exists!");
+                return;
+            }
+
+
+            Console.Write("Enter name: ");
+            string memberName = Console.ReadLine();
+
+            Console.Write("Enter age: ");
+            int memberAge;
+            while (!Int32.TryParse(Console.ReadLine(), out memberAge))
+            {
+                Console.WriteLine("Invalit input. Please enter a number!");
+            }
+
+
+
+            Console.Write("Enter membership type  (montlhy/yearly): ");
+            string membershipType = Console.ReadLine();
+
+            Member newMember = new Member
+            {
+                ID = memberID,
+                Name = memberName,
+                Age = memberAge,
+                MembershipType = membershipType
+            };
+
+            members.Add(newMember);
+            Console.WriteLine("Member added!");
+
+            Console.ReadKey();
         }
 
         static void ViewMember()
         {
+            Console.Clear();
             Console.WriteLine("=== View Members ===");
         }
 
         static void UpdateMember()
         {
+            Console.Clear();
             Console.WriteLine("=== Update Member ===");
         }
 
         static void DeleteMember()
         {
+            Console.Clear();
             Console.WriteLine("Delete member");
         }
 
@@ -95,7 +138,6 @@ namespace GymApp
         public int ID { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public int PhoneNumber { get;set; }
         public string MembershipType { get; set; }
     }
 }
