@@ -81,6 +81,16 @@ namespace GymApp
                 Console.WriteLine("A member with this ID already exists!");
                 return;
             }
+            //bool idExists = false;
+            //foreach (var m in members)
+            //{
+            //    if (m.ID == memberID)
+            //    {
+            //        idExists = true;
+            //        break;
+            //    }
+            //}
+
 
 
             Console.Write("Enter name: ");
@@ -116,12 +126,43 @@ namespace GymApp
         {
             Console.Clear();
             Console.WriteLine("=== View Members ===");
+
+            if (members.Count == 0)
+            {
+                Console.WriteLine("No members found!");
+                return;
+            }
+            foreach (Member m in members)
+            {
+                Console.WriteLine("-----------------");
+                Console.WriteLine($"ID: {m.ID} ");
+                Console.WriteLine($"Name: {m.Name} ");
+                Console.WriteLine($"Age: {m.Age} ");
+                Console.WriteLine($"Membership: {m.MembershipType} ");
+            }
+            Console.WriteLine("-----------------");
+            Console.ReadKey();
         }
 
         static void UpdateMember()
         {
             Console.Clear();
             Console.WriteLine("=== Update Member ===");
+            Console.WriteLine("-----------------");
+            Console.Write("Enter member id to update: ");
+            int memberID;
+            while (!Int32.TryParse(Console.ReadLine(), out memberID))
+            {
+                Console.WriteLine("Invalit input. Please enter a number!");
+            }
+            Member memberToUpdate = members.Find(m => m.ID == memberID);
+            if (memberToUpdate == null)
+            {
+                Console.WriteLine("Member not found.");
+                return;
+            }
+
+
         }
 
         static void DeleteMember()
